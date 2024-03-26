@@ -42,11 +42,9 @@ for dataIndex = 3 : 6
             acc(r1Index, r2Index) = tempResBest(1, 7);
             nmi(r1Index, r2Index) = tempResBest(1, 4);
             purity(r1Index, r2Index) = tempResBest(1, 8);
-            for tempIndex = 1 : 8
-                if tempResBest(1, tempIndex) > ResBest(1, tempIndex)
-                    ResBest(1, tempIndex) = tempResBest(1, tempIndex);
-                    ResStd(1, tempIndex) = tempResStd(1, tempIndex);
-                end
+            if tempResBest(1, 7) > ResBest(1, 7)
+                ResBest(1, :) = tempResBest(1, :);
+                ResStd(1, :) = tempResStd(1, :);
             end
         end
     end
